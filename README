@@ -13,3 +13,9 @@ $ ./test.sh
 [Uninstallation]
 $ make clean
 
+
+[Assumptions about the program]
+- I assume that each ID is a case-insensitive English character. In the cart file, any character which is not an English character is skipped. I also assume that the cart file is a single-line file. 
+- I assume that the policies and prices are hard-coded in the source code, for a security purpose. If the price and promotions are read from a file, then an external attack (e.g., cross-site-scripting attacks) could be possible by swapping or changing the contents of the text file. Unlike cart files, if the price or promotion rule files are compromised, this will create a serious financial damage to the company. Because I do not know about the security setup of the platform which runs this program, I assumed the safest case: all promotions and prices are hard-coded in the program, so an external attack is impossible unless recompiling the original source code. But if the customer asks for changing this code to read prices & promotions from files, then I will gladly make this change. 
+- I used an array for the price & count lists for IDs, because its access time is O(1), very fast.
+- I used switch to check if the cart satisfies each policy. The case block makes it modular to check future possible rules, such as % or DISCOUNT.
