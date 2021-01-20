@@ -18,7 +18,7 @@ answers=(
 )
 for (( i = 1; i <= ${#answers[@]}; i++)); do
 	echo "<Test $i>"
-	./sku test$i.txt
+	./sku testcases/test$i.txt
 	echo "- Expected Total Price: ${answers[$((i - 1))]}"
 	echo
 done
