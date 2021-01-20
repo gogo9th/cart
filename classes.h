@@ -47,7 +47,6 @@ public:
    {
       for (int i = 0; i < ID_COUNT; i++)
       {  
-//printf("%c: %d vs %d\n", i + 'A', id_price_list[i], id_count_list[i]);
 			if (id_price_list[i] < id_count_list[i])
             return false;
 		}

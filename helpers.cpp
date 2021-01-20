@@ -79,22 +79,13 @@ int CalculatePrice(vector<PromotionRule>& promotion_rule_list, const int* id_pri
 {
    int total_price = 0;
 
-/*for (int i = 0; i < promotion_rule_list.size(); i++)
-{	PromotionRule promotion_rule = promotion_rule_list[i];
-	for (int j = 0; j < ID_COUNT; j++)
-		printf("%c: %d\n", j + 'A', promotion_rule.id_count_list[j]);
-	cout << endl;
-}
-*/
 	/* apply promotions */
    for (int i = 0; i < promotion_rule_list.size(); i++)
    {  PromotionRule* promotion_rule_ptr = &(promotion_rule_list[i]);
-//printf("Test Rule\n");
       while (promotion_rule_ptr->ApplyRule(cart))
       {  
 			int value = promotion_rule_ptr->GetValue();
          int type = promotion_rule_ptr->GetType();
-printf("Rule %d: %d\n", i, value);
          switch (type)
          {  case PRICE:
                total_price += value;
@@ -111,7 +102,6 @@ printf("Rule %d: %d\n", i, value);
 	/* remaining prices after promotions */
    for (int i = 0; i < ID_COUNT; i++)
    {	total_price += (id_price_list[i] * cart[i]);
-if (cart[i]) printf("Add %d * %d = %d\n", id_price_list[i], cart[i], id_price_list[i] * cart[i]); 
 	}
    return total_price;
 }

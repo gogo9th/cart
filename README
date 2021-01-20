@@ -1,0 +1,15 @@
+[Installation]
+$ make
+
+[Run a single test]
+$ ./sky test1.txt
+$ ./sky test1.txt
+...
+$ ./sky test14.txt
+
+[Test]
+$ ./test.sh
+
+[Uninstallation]
+$ make clean
+

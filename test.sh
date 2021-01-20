@@ -16,9 +16,9 @@ answers=(
 95
 0
 )
-for (( i = 1; i <= 14; i++)); do
+for (( i = 1; i <= ${#answers[@]}; i++)); do
 	echo "<Test $i>"
 	./sku test$i.txt
-	echo "Expected Total Price: ${answers[$((i - 1))]}"
+	echo "- Expected Total Price: ${answers[$((i - 1))]}"
 	echo
 done

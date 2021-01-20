@@ -3,4 +3,4 @@ all: main.cpp helpers.cpp helpers.h classes.h
 
 .PHONY:
 clean:
-	rm -f sku a
+	rm -f sku
